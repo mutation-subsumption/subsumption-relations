@@ -5,7 +5,7 @@ Abstract—Mutation analysis is a popular but costly approach to assess the qual
 ## Subjects
 
 | Project        | Version          | CLOC       |
-|----------------|------------------|------------|
+| :---           |             ---: |       ---: |
 | joda-time      |           2.10.1 |     28,790 |
 | commons-math   |            3.6.1 |    100,364 |
 | commons-lang   |              3.6 |     27,267 |
