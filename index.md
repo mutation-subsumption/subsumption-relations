@@ -165,3 +165,25 @@ At Line 11 of the xor method there is the following statement: ``result ^= eleme
 [Lindström and Márki](https://onlinelibrary.wiley.com/doi/full/10.1002/stvr.1667) suggest that the subsumption relations cannot hold when the mutated statements are re-executed (in the context of strong mutation). If the mutated instruction is executed more than once by any test execution, we cannot determine the future state of the program. Since our subsumption relations were obtained from a program where the final state is known, they are not sufficient to represent the mutation within a repeating context.
 
 ### RQ 3: _What are the time savings of eliminating likely-subsumed mutants?_
+
+*docker-compose.yml*
+```yml
+version: '3'
+services:
+  hunor:
+    image: hunor:0.9.13
+    working_dir: /opt/src
+    command: [
+      'hunor-time',
+      '-j', '/usr/local/openjdk-8',
+      '-m', '/usr/share/maven',
+      '-c', 'config.json',
+      '--coverage-threshold', '0',
+      '--mutation-tool', 'mujava',
+      '--mutants', 'mutants',
+      '--disable-minimal-testsuite',
+      '--enable-new-mutations'
+    ]
+    volumes:
+      - .:/opt/src
+```
