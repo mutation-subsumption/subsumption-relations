@@ -2,6 +2,91 @@
 
 Abstract—Mutation analysis is a popular but costly approach to assess the quality of test suites. One recent promising direction on reducing costs of mutation analysis is to identify redundant mutations, i.e., mutations that are subsumed by some other mutations. Previous works found out redundant mutants manually through the truth table. Although the idea is promising, it can only be applied for logical and relational operators. In this paper, we propose an approach to discover redundancy in mutations through dynamic subsumption relations among mutants. Past work has demonstrated that finding out the true subsumption relation among mutants in large blocks of code (like a class or a function) is difficult (in some cases computationally infeasible), mainly because of the context-information that needs to be taken into account. This way, we reduced the scope and focused on subsumption relations among mutations of an expression or statement, named here as “mutation target.” By focusing on targets and relying on automatic test generation tools, we defined subsumption relations for dozens of mutation targets in which the MuJava tool can apply mutations. We then implemented these relations in a tool, named MuJava-M, that generates a reduced set of mutants for each target, avoiding redundant mutants. We evaluated MuJava and MuJava-M using classes of industrial-scale projects. Our results indicate that MuJava-M generates less mutants (on average 53.33% less) with 100% of effectiveness in 19 out of 32 targets and more than 90% in 29 out of 32 mutation targets. MuJava-M also reduced the time to execute the test suites against the mutants in 52.53% on average, considering the full mutation analysis process.
 
+# Discover Dynamic Subsumption Relations
+
+## Hunor 
+Tool to find mutation relationships between mutants through exhaustive testing of mutation targets.
+
+[Download]()
+
+## hunor-maven-plugin
+
+Maven plugin that facilitates the execution of MuJava, Mujava-M, mutation analysis in maven projects.
+
+
+**MuJava**
+To run MuJava to generate mutants for all classes with method-level operators enabled:
+``` sh
+mvn double.blind:hunor-maven-plugin:0.3.9:mujava-generate
+```
+
+**MuJava-M**
+To run MuJava-M to generate mutants for all classes with all method-level operators enabled:
+``` sh
+mvn double.blind:hunor-maven-plugin:0.3.9:mujava-generate -Dhunor.enableRules
+```
+
+**Mutation Analysis**
+Mutant generation and test execution with Maven.
+
+``` sh
+mvn double.blind:hunor-maven-plugin:0.3.9:analysis 
+```
+
+[Download]()
+
+
+## Dockerfile to execute hunor
+
+``` Dockerfile
+FROM python:3
+```
+
+| Target                                 | Minimal Set                                             | Reduction |
+| :---                                   | :---                                                    |      ---: |
+| ``lexp + rexp``                        | ``AORB %``, ``ODL lexp``, ``ODL rexp``                  |     62.5% |
+| ``lexp + rexp (obj)``                  | ``ODL lexp``, ``ODL rexp``                              |     50.0% |
+| ``lexp - rexp``                        | ``AORB %``, ``ODL lexp``, ``ODL rexp``                  |     62.5% |
+| ``lexp * rexp``                        | ``AORB /``, ``ODL lexp``, ``ODL rexp``                  |     62.5% |
+| ``lexp / rexp``                        | ``AORB %``, ``AOIS *``, ``ODL rexp``                    |     62.5% |
+| ``lexp % rexp``                        | ``AORB +``, ``AORB -``, ``AORB /``, ``ODL lexp``        |     50.0% | 
+| ``lexp > rexp``                        | ``ROR false``, ``ROR !=``, ``ROR >=``                   |     62.5% |
+| ``lexp >= rexp``                       | ``ROR true``, ``ROR ==``, ``ROR >``                     |     62.5% |
+| ``lexp < rexp``                        | ``ROR false``, ``ROR !=``, ``ROR <=``                   |     62.5% |
+| ``lexp <= rexp``                       | ``ROR true``, ``ROR ==``, ``ROR <``                     |     62.5% |
+| ``lexp == rexp``                       | ``ROR false``, ``ROR <=``, ``ROR >=``                   |     62.5% |
+| ``lexp == rexp (obj)``                 | ``ROR !=``                                              |     50.0% |
+| ``lexp == rexp (bool)``                | ``ROR !=``, ``ODL lexp``, ``ODL rexp``                  |     50.0% |
+| ``lexp != rexp``                       | ``ROR true``, ``ROR <``, ``ROR >``                      |     62.5% |
+| ``lexp != rexp (obj)``                 | ``ROR ==``                                              |     50.0% |
+| ``lexp != rexp (bool)``                | ``ROR ==``, ``ODL lexp``, ``ODL rexp``                  |     50.0% |
+| ``lexp && rexp``                       | ``COR false``, ``COR ==``                               |     81.8% |
+| ``lexp \|\| rexp``                     | ``COR true``, ``COR !=``                                |     81.8% |
+| ``lexp & rexp``                        | ``ODL lexp``, ``ODL rexp``                              |     66.7% |
+| ``lexp \| rexp``                       | ``ODL lexp``, ``ODL rexp``, ``LOR ~``                   |     66.7% |
+| ``lexp ^ rexp``                        | ``LOR \|``                                              |     83.3% | 
+| ``lexp ^ rexp (bool)``                 | ``COR false``, ``COR \|\|``                             |     80.0% |
+| ``exp``                                | ``AOIU -exp``                                           |     83.3% |
+| ``+exp``                               | ``LOI ~exp``                                            |     75.0% |
+| ``!exp``                               | ``COD exp``                                             |     50.0% |
+| ``-exp``                               | ``AODU exp``                                            |     66.7% |
+| ``~exp``                               | ``LOD exp``                                             |     75.0% |
+| ``++exp``                              | ``AODS exp``                                            |     75.0% |
+| ``exp++``                              | ``LOI ~exp``                                            |     75.0% |
+| ``--exp``                              | ``AODS exp``                                            |     75.0% |
+| ``exp--``                              | ``LOI ~exp``                                            |     75.0% |
+| ``lhs += rhs``                         | ``ASRS -=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
+| ``lhs -= rhs``                         | ``ASRS +=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
+| ``lhs *= rhs``                         | ``ASRS /=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
+| ``lhs /= rhs``                         | ``ASRS *=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
+| ``lhs %= rhs``                         | ``ASRS +=``, ``ASRS -=``, ``ASRS *=``, ``ASRS /=``      |     33.3% |
+| ``lhs <<= rhs``                        | ``ASRS >>=``,                                           |     66.7% |
+| ``lhs >= rhs``                         | ``ASRS <<=``, ``ODL =``                                 |     33.3% |
+| ``lhs >>>= rhs``                       | ``ASRS >>=``, ``ASRS <<=``                              |     50.0% |
+| ``lhs &= rhs``                         | ``ODL =``                                               |     75.0% |
+| ``lhs \|= rhs``                        | ``ODL =``, ``ASRS ^``                                   |     50.0% |
+| ``lhs ^= rhs``                         | ``ASRS \|=``                                            |     75.0% |
+
 ## Subjects
 
 | Project        | Version          | CLOC       |
@@ -15,7 +100,7 @@ Abstract—Mutation analysis is a popular but costly approach to assess the qual
 
 ### RQ 1: _How many mutants are likely-subsumed?_
 
-
+[Reduction and Effectiviness.csv](https://raw.githubusercontent.com/mutation-subsumption/subsumption-relations/master/Reduction%20and%20Effectiveness.csv)
 
 ### RQ 2: _How many mutants are incorrectly discarded from the minimal set?_
 
