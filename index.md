@@ -40,7 +40,7 @@ mvn double.blind:hunor-maven-plugin:0.3.9:analysis
 
 ### Binarary expresions with arithmethic operators
 
-[``lexp + rexp``](/relations/lexp-plus-rexp/) 
+[``lexp + rexp``](relations/lexp-plus-rexp/) 
 
 
 
