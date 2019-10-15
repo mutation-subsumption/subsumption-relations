@@ -2,14 +2,14 @@
 
 Abstract—Mutation analysis is a popular but costly approach to assess the quality of test suites. One recent promising direction on reducing costs of mutation analysis is to identify redundant mutations, i.e., mutations that are subsumed by some other mutations. Previous works found out redundant mutants manually through the truth table. Although the idea is promising, it can only be applied for logical and relational operators. In this paper, we propose an approach to discover redundancy in mutations through dynamic subsumption relations among mutants. Past work has demonstrated that finding out the true subsumption relation among mutants in large blocks of code (like a class or a function) is difficult (in some cases computationally infeasible), mainly because of the context-information that needs to be taken into account. This way, we reduced the scope and focused on subsumption relations among mutations of an expression or statement, named here as “mutation target.” By focusing on targets and relying on automatic test generation tools, we defined subsumption relations for dozens of mutation targets in which the MuJava tool can apply mutations. We then implemented these relations in a tool, named MuJava-M, that generates a reduced set of mutants for each target, avoiding redundant mutants. We evaluated MuJava and MuJava-M using classes of industrial-scale projects. Our results indicate that MuJava-M generates less mutants (on average 53.33% less) with 100% of effectiveness in 19 out of 32 targets and more than 90% in 29 out of 32 mutation targets. MuJava-M also reduced the time to execute the test suites against the mutants in 52.53% on average, considering the full mutation analysis process.
 
-# Discover Dynamic Subsumption Relations
+# Tools 
 
-## Hunor 
+### Hunor 
 Tool to find mutation relationships between mutants through exhaustive testing of mutation targets.
 
 [Download]()
 
-## hunor-maven-plugin
+### hunor-maven-plugin
 
 Maven plugin that facilitates the execution of MuJava, Mujava-M, mutation analysis in maven projects.
 
@@ -36,11 +36,13 @@ mvn double.blind:hunor-maven-plugin:0.3.9:analysis
 [Download]()
 
 
-## Dockerfile to execute hunor
+# Discover Dynamic Subsumption Relations
 
-``` Dockerfile
-FROM python:3
-```
+### Binarary expresions with arithmethic operators
+
+[``lexp + rexp``](/relations/lexp-plus-rexp/) 
+
+
 
 | Target                                 | Minimal Set                                             | Reduction |
 | :---                                   | :---                                                    |      ---: |
