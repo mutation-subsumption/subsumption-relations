@@ -19,7 +19,7 @@ The docker-compose file shown below runs Hunor with the necessary parameters to 
 With Docker and Docker Compose installed on your machine, follow these steps:
 
 1) Create or use an existing maven project.
-2) Add the *docker-compose.yml* file to the project root, along with the [*config.json*](config-discover.json) configuration file.
+2) Add the *docker-compose.yml* file to the project root, along with the [*config.json*](https://raw.githubusercontent.com/mutation-subsumption/subsumption-relations/master/config-discover.json) configuration file.
 3) Run docker-composer with the command:
 
 *docker-compose.yml*
