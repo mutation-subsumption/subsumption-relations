@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "lexp + rexp"
 permalink: /relations/lexp-plus-rexp/
 ---
