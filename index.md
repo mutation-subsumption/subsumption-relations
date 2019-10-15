@@ -5,38 +5,48 @@ Abstract—Mutation analysis is a popular but costly approach to assess the qual
 # Tools 
 
 ### Hunor 
-Tool to find mutation relationships between mutants through exhaustive testing of mutation targets.
+We created a tool called Hunor to automate various steps of the study. We also developed hunor-maven-plugin to facilitate the execution of MuJava, MuJava-M, and mutation analysis in maven projects. To replicate the study or run the tools on other subjects, we provide a Docker image that contains all the tools and settings needed to run Hunor a maven project. The image is available on Docker Hub at https://hub.docker.com/r/mutationsubsumption/hunor.
 
-[Download]()
-
-### hunor-maven-plugin
-
-Maven plugin that facilitates the execution of MuJava, Mujava-M, mutation analysis in maven projects.
-
-
-**MuJava**
-To run MuJava to generate mutants for all classes with method-level operators enabled:
-``` sh
-mvn double.blind:hunor-maven-plugin:0.3.9:mujava-generate
-```
-
-**MuJava-M**
-To run MuJava-M to generate mutants for all classes with all method-level operators enabled:
-``` sh
-mvn double.blind:hunor-maven-plugin:0.3.9:mujava-generate -Dhunor.enableRules
-```
-
-**Mutation Analysis**
-Mutant generation and test execution with Maven.
-
-``` sh
-mvn double.blind:hunor-maven-plugin:0.3.9:analysis 
-```
-
-[Download]()
+In each step of the study, we show the docker-compose configuration needed to replicate the experiment.
 
 
 # Discover Dynamic Subsumption Relations
+
+
+
+The docker-compose file shown below runs Hunor with the necessary parameters to generate the DMSG that represents the dynamic subsuming relationship on all project targets.
+ 
+With Docker and Docker Compose installed on your machine, follow these steps:
+
+1) Create or use an existing maven project.
+2) Add the *docker-compose.yml* file to the project root, along with the [*config.json*](config-discover.json) configuration file.
+3) Run docker-composer with the command:
+
+*docker-compose.yml*
+```yml
+version: '3'
+services:
+  hunor:
+    image: mutationsubsumption/hunor:0.9.9
+    working_dir: /opt/src
+    command: [
+      'hunor-pgen',
+      '-j', '/usr/local/openjdk-8',
+      '-m', '/usr/share/maven',
+      '-c', 'config.json',
+      '--coverage-threshold', '0',
+      '--mutation-tool', 'mujava',
+      '--mutants', 'mutants',
+      '--disable-minimal-testsuite',
+      '--enable-new-mutations',
+      '--suites-evosuite', '5',
+      '--suites-randoop', '5'
+    ]
+    volumes:
+      - .:/opt/src
+```
+
+
 
 ### Binarary expresions with arithmethic operators
 
