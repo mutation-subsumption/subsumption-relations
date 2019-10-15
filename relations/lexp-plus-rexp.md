@@ -1,6 +1,6 @@
 layout: page
 title: "lexp + rexp"
-permalink: /relations/lexp-plus-rexp
+permalink: /relations/lexp-plus-rexp/
 
 # Target: ``lexp + rexp``
 
