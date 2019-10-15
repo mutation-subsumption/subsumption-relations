@@ -1,0 +1,28 @@
+{
+    "project": "commons-lang",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main", "java"],
+    "randoop": {
+        "parameters": [
+            "--output-limit=10000",
+            "--maxsize=5",
+            "--testsperfile=10000",
+            "--only-test-public-members=true",
+            "--time-limit=60",
+            "--flaky-test-behavior=DISCARD",
+            "--usethreads=true",
+            "--call_timeout=1000"
+        ]
+    },
+    "evosuite": {
+        "parameters": [
+            "-Dsearch_budget=60",
+            "-Dmax_length_test_case=2500",
+            "-Dmax_size=2",
+            "-Dminimize=true",
+            "-Dstopping_condition=MaxTime"
+        ]
+    }
+}
