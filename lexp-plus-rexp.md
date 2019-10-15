@@ -18,6 +18,7 @@ public int sum(int lexp, int rexp) {
 
 ### DMSG
 
+![image](images/dmsg_lexp-plus_rexp.png)
 
 ## Sufficient Mutants
 
