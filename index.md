@@ -166,6 +166,25 @@ At Line 11 of the xor method there is the following statement: ``result ^= eleme
 
 ### RQ 3: _What are the time savings of eliminating likely-subsumed mutants?_
 
+
+
+1) Download the source-code of subjects analyzed.
+2) Add the *docker-compose.yml* file to the project root, use the config.json files corresponding to each subject.
+3) Run docker-composer with the command:
+
+**joda-time (2.10.1)**
+[config.json]()
+
+**commons-math (3.6)**
+[config.json]()
+
+**commons-lang (1.4.199)**
+[config.json]()
+
+**javassist (3.20)**
+[config.json]()
+
+
 *docker-compose.yml*
 ```yml
 version: '3'
