@@ -54,51 +54,6 @@ services:
 
 
 
-| Target                                 | Minimal Set                                             | Reduction |
-| :---                                   | :---                                                    |      ---: |
-| ``lexp + rexp``                        | ``AORB %``, ``ODL lexp``, ``ODL rexp``                  |     62.5% |
-| ``lexp + rexp (obj)``                  | ``ODL lexp``, ``ODL rexp``                              |     50.0% |
-| ``lexp - rexp``                        | ``AORB %``, ``ODL lexp``, ``ODL rexp``                  |     62.5% |
-| ``lexp * rexp``                        | ``AORB /``, ``ODL lexp``, ``ODL rexp``                  |     62.5% |
-| ``lexp / rexp``                        | ``AORB %``, ``AOIS *``, ``ODL rexp``                    |     62.5% |
-| ``lexp % rexp``                        | ``AORB +``, ``AORB -``, ``AORB /``, ``ODL lexp``        |     50.0% | 
-| ``lexp > rexp``                        | ``ROR false``, ``ROR !=``, ``ROR >=``                   |     62.5% |
-| ``lexp >= rexp``                       | ``ROR true``, ``ROR ==``, ``ROR >``                     |     62.5% |
-| ``lexp < rexp``                        | ``ROR false``, ``ROR !=``, ``ROR <=``                   |     62.5% |
-| ``lexp <= rexp``                       | ``ROR true``, ``ROR ==``, ``ROR <``                     |     62.5% |
-| ``lexp == rexp``                       | ``ROR false``, ``ROR <=``, ``ROR >=``                   |     62.5% |
-| ``lexp == rexp (obj)``                 | ``ROR !=``                                              |     50.0% |
-| ``lexp == rexp (bool)``                | ``ROR !=``, ``ODL lexp``, ``ODL rexp``                  |     50.0% |
-| ``lexp != rexp``                       | ``ROR true``, ``ROR <``, ``ROR >``                      |     62.5% |
-| ``lexp != rexp (obj)``                 | ``ROR ==``                                              |     50.0% |
-| ``lexp != rexp (bool)``                | ``ROR ==``, ``ODL lexp``, ``ODL rexp``                  |     50.0% |
-| ``lexp && rexp``                       | ``COR false``, ``COR ==``                               |     81.8% |
-| ``lexp \|\| rexp``                     | ``COR true``, ``COR !=``                                |     81.8% |
-| ``lexp & rexp``                        | ``ODL lexp``, ``ODL rexp``                              |     66.7% |
-| ``lexp \| rexp``                       | ``ODL lexp``, ``ODL rexp``, ``LOR ~``                   |     66.7% |
-| ``lexp ^ rexp``                        | ``LOR \|``                                              |     83.3% | 
-| ``lexp ^ rexp (bool)``                 | ``COR false``, ``COR \|\|``                             |     80.0% |
-| ``exp``                                | ``AOIU -exp``                                           |     83.3% |
-| ``+exp``                               | ``LOI ~exp``                                            |     75.0% |
-| ``!exp``                               | ``COD exp``                                             |     50.0% |
-| ``-exp``                               | ``AODU exp``                                            |     66.7% |
-| ``~exp``                               | ``LOD exp``                                             |     75.0% |
-| ``++exp``                              | ``AODS exp``                                            |     75.0% |
-| ``exp++``                              | ``LOI ~exp``                                            |     75.0% |
-| ``--exp``                              | ``AODS exp``                                            |     75.0% |
-| ``exp--``                              | ``LOI ~exp``                                            |     75.0% |
-| ``lhs += rhs``                         | ``ASRS -=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
-| ``lhs -= rhs``                         | ``ASRS +=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
-| ``lhs *= rhs``                         | ``ASRS /=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
-| ``lhs /= rhs``                         | ``ASRS *=``, ``ASRS %=``, ``ODL =``                     |     50.0% |
-| ``lhs %= rhs``                         | ``ASRS +=``, ``ASRS -=``, ``ASRS *=``, ``ASRS /=``      |     33.3% |
-| ``lhs <<= rhs``                        | ``ASRS >>=``,                                           |     66.7% |
-| ``lhs >= rhs``                         | ``ASRS <<=``, ``ODL =``                                 |     33.3% |
-| ``lhs >>>= rhs``                       | ``ASRS >>=``, ``ASRS <<=``                              |     50.0% |
-| ``lhs &= rhs``                         | ``ODL =``                                               |     75.0% |
-| ``lhs \|= rhs``                        | ``ODL =``, ``ASRS ^``                                   |     50.0% |
-| ``lhs ^= rhs``                         | ``ASRS \|=``                                            |     75.0% |
-
 ## Subjects
 
 | Project        | Version          | CLOC       |
@@ -236,7 +191,7 @@ git clone https://github.com/apache/commons-math -b 3.6.1-release
        "org/apache/commons/math3/optim/nonlinear/scalar/LeastSquaresConverter.java",
        "org/apache/commons/math3/optim/SimpleValueChecker.java",
        "org/apache/commons/math3/linear/DefaultIterativeLinearSolverEvent.java",
-        "org/apache/commons/math3/analysis/FunctionUtils.java"
+       "org/apache/commons/math3/analysis/FunctionUtils.java"
     ]
 
 }
@@ -274,7 +229,7 @@ git clone https://github.com/jboss-javassist/javassist -b 3.20
 ```
 
 *config.json*
-```
+```json
 {
     "project": "javassist",
     "source": [
