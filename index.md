@@ -71,6 +71,8 @@ services:
 2) Add the *docker-compose.yml* file to the project root, use the config.json files corresponding to each subject.
 3) Run docker-composer with the command ``docker-compose up``
 
+
+*docker-compose.yml*
 ```yml
 version: '3'
 services:
@@ -79,28 +81,6 @@ services:
     working_dir: /opt/src
     command: [
       'hunor-eval',
-      '-j', '/usr/local/openjdk-8',
-      '-m', '/usr/share/maven',
-      '-c', 'config.json',
-      '--coverage-threshold', '0',
-      '--mutation-tool', 'mujava',
-      '--mutants', 'mutants',
-      '--disable-minimal-testsuite',
-      '--enable-new-mutations'
-    ]
-    volumes:
-      - .:/opt/src
-```
-
-*docker-compose.yml*
-```yml
-version: '3'
-services:
-  hunor:
-    image: hunor:0.9.13
-    working_dir: /opt/src
-    command: [
-      'hunor-time',
       '-j', '/usr/local/openjdk-8',
       '-m', '/usr/share/maven',
       '-c', 'config.json',
@@ -168,6 +148,17 @@ git clone https://github.com/apache/commons-lang -b LANG_3_6
 **h2 (1.4.199)**
 ```sh
 git clone https://github.com/h2database/h2database -b 1.4.199
+```
+
+*config.json*
+```json
+{
+    "project": "h2",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main"]
+}
 ```
 
 **javassist (3.20)**
