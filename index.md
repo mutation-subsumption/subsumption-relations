@@ -172,7 +172,7 @@ git clone https://github.com/JodaOrg/joda-time -b v2.10.1
 }
 ```
 
-**commons-math (3.6)**
+**commons-math (3.6.1)**
 
 ```sh
 git clone https://github.com/apache/commons-math -b 3.6.1-release
@@ -198,7 +198,7 @@ git clone https://github.com/apache/commons-math -b 3.6.1-release
 
 ```
 
-**commons-lang (1.4.199)**
+**commons-lang (3.6)**
 
 ```sh
 git clone https://github.com/apache/commons-lang -b LANG_3_6
