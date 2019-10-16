@@ -67,6 +67,127 @@ services:
 
 ### RQ 1: _How many mutants are likely-subsumed?_
 
+1) Download the source-code of subjects analyzed.
+2) Add the *docker-compose.yml* file to the project root, use the config.json files corresponding to each subject.
+3) Run docker-composer with the command ``docker-compose up``
+
+```yml
+version: '3'
+services:
+  hunor:
+    image: hunor:0.9.9
+    working_dir: /opt/src
+    command: [
+      'hunor-eval',
+      '-j', '/usr/local/openjdk-8',
+      '-m', '/usr/share/maven',
+      '-c', 'config.json',
+      '--coverage-threshold', '0',
+      '--mutation-tool', 'mujava',
+      '--mutants', 'mutants',
+      '--disable-minimal-testsuite',
+      '--enable-new-mutations'
+    ]
+    volumes:
+      - .:/opt/src
+```
+
+*docker-compose.yml*
+```yml
+version: '3'
+services:
+  hunor:
+    image: hunor:0.9.13
+    working_dir: /opt/src
+    command: [
+      'hunor-time',
+      '-j', '/usr/local/openjdk-8',
+      '-m', '/usr/share/maven',
+      '-c', 'config.json',
+      '--coverage-threshold', '0',
+      '--mutation-tool', 'mujava',
+      '--mutants', 'mutants',
+      '--disable-minimal-testsuite',
+      '--enable-new-mutations'
+    ]
+    volumes:
+      - .:/opt/src
+```
+
+**joda-time (2.10.1)**
+
+```sh
+git clone https://github.com/JodaOrg/joda-time -b v2.10.1
+```
+
+*config.json*
+```json
+{
+    "project": "joda-time",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main", "java"]
+}
+```
+
+**commons-math (3.6.1)**
+
+```sh
+git clone https://github.com/apache/commons-math -b 3.6.1-release
+```
+
+*config.json*
+```json
+{
+    "project": "commons-math",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main", "java"]
+}
+
+```
+
+**commons-lang (3.6)**
+
+```sh
+git clone https://github.com/apache/commons-lang -b LANG_3_6
+```
+
+*config.json*
+```json
+{
+    "project": "commons-lang",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main", "java"]
+}
+```
+**h2 (1.4.199)**
+```sh
+git clone https://github.com/h2database/h2database -b 1.4.199
+```
+
+**javassist (3.20)**
+
+```sh
+git clone https://github.com/jboss-javassist/javassist -b 3.20
+```
+
+*config.json*
+```json
+{
+    "project": "javassist",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main"]
+}
+```
+
+
 [Reduction and Effectiviness.csv](https://raw.githubusercontent.com/mutation-subsumption/subsumption-relations/master/Reduction%20and%20Effectiveness.csv)
 
 ### RQ 2: _How many mutants are incorrectly discarded from the minimal set?_
@@ -123,7 +244,7 @@ At Line 11 of the xor method there is the following statement: ``result ^= eleme
 
 1) Download the source-code of subjects analyzed.
 2) Add the *docker-compose.yml* file to the project root, use the config.json files corresponding to each subject.
-3) Run docker-composer with the command:
+3) Run docker-composer with the command ``docker-compose up``
 
 *docker-compose.yml*
 ```yml
