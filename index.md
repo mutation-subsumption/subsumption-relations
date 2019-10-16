@@ -77,7 +77,7 @@ services:
 version: '3'
 services:
   hunor:
-    image: hunor:0.9.9
+    image: hunor:0.9.8
     working_dir: /opt/src
     command: [
       'hunor-eval',
