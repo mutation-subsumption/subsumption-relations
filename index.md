@@ -27,7 +27,7 @@ With Docker and Docker Compose installed on your machine, follow these steps:
 version: '3'
 services:
   hunor:
-    image: mutationsubsumption/hunor:0.9.9
+    image: mutationsubsumption/hunor:0.9.8
     working_dir: /opt/src
     command: [
       'hunor-pgen',
