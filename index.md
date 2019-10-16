@@ -166,24 +166,9 @@ At Line 11 of the xor method there is the following statement: ``result ^= eleme
 
 ### RQ 3: _What are the time savings of eliminating likely-subsumed mutants?_
 
-
-
 1) Download the source-code of subjects analyzed.
 2) Add the *docker-compose.yml* file to the project root, use the config.json files corresponding to each subject.
 3) Run docker-composer with the command:
-
-**joda-time (2.10.1)**
-[config.json]()
-
-**commons-math (3.6)**
-[config.json]()
-
-**commons-lang (1.4.199)**
-[config.json]()
-
-**javassist (3.20)**
-[config.json]()
-
 
 *docker-compose.yml*
 ```yml
@@ -206,3 +191,105 @@ services:
     volumes:
       - .:/opt/src
 ```
+
+**joda-time (2.10.1)**
+
+```sh
+git clone https://github.com/JodaOrg/joda-time -b v2.10.1
+```
+
+*config.json*
+```json
+{
+    "project": "joda-time",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main", "java"],
+    "include": [
+        "org/joda/time/field/FieldUtils.java",
+        "org/joda/time/MutableDateTime.java",
+        "org/joda/time/chrono/ISOYearOfEraDateTimeField.java",
+        "org/joda/time/MutableInterval.java",
+        "org/joda/time/field/UnsupportedDateTimeField.java",
+        "org/joda/time/chrono/GJMonthOfYearDateTimeField.java"
+    ]
+}
+```
+
+**commons-math (3.6)**
+
+```sh
+git clone https://github.com/apache/commons-math -b 3.6.1-release
+```
+
+*config.json*
+```json
+{
+    "project": "commons-math",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main", "java"],
+    "include": [
+       "org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+       "org/apache/commons/math3/optim/nonlinear/scalar/LeastSquaresConverter.java",
+       "org/apache/commons/math3/optim/SimpleValueChecker.java",
+       "org/apache/commons/math3/linear/DefaultIterativeLinearSolverEvent.java",
+        "org/apache/commons/math3/analysis/FunctionUtils.java"
+    ]
+
+}
+
+```
+
+**commons-lang (1.4.199)**
+
+```sh
+git clone https://github.com/apache/commons-lang -b LANG_3_6
+```
+
+*config.json*
+```json
+{
+    "project": "commons-lang",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main", "java"],
+    "include": [
+        "org/apache/commons/lang3/math/IEEE754rUtils.java",
+        "org/apache/commons/lang3/mutable/MutableInt.java",
+        "org/apache/commons/lang3/ClassPathUtils.java",
+        "org/apache/commons/lang3/mutable/MutableObject.java",
+        "org/apache/commons/lang3/concurrent/ConstantInitializer.java"
+    ]
+}
+```
+
+**javassist (3.20)**
+
+```sh
+git clone https://github.com/jboss-javassist/javassist -b 3.20
+```
+
+*config.json*
+```
+{
+    "project": "javassist",
+    "source": [
+        "."
+    ],
+    "java_src": ["src", "main"],
+    "include": [
+	"javassist/bytecode/stackmap/MapMaker.java",
+	"javassist/bytecode/annotation/TypeAnnotationsWriter.java",
+	"javassist/expr/Handler.java",
+	"javassist/bytecode/analysis/Subroutine.java",
+	"javassist/compiler/ast/Keyword.java"
+    ]
+}
+```
+
+
+
