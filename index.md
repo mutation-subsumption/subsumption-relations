@@ -48,10 +48,66 @@ services:
 
 
 
-### Binarary expresions with arithmethic operators
+### Binary expressions with arithmethic operators
 
 [``lexp + rexp``](relations/lexp-plus-rexp/) 
+[``lexp - rexp``](relations/lexp-minus-rexp/) 
+[``lexp * rexp``](relations/lexp-times-rexp/) 
+[``lexp / rexp``](relations/lexp-div-rexp/) 
+[``lexp % rexp``](relations/lexp-mod-rexp/) 
 
+### Binary expressions with logical operators
+
+[``lexp && rexp``](relations/lexp-and-rexp/) 
+[``lexp || rexp``](relations/lexp-or-rexp/) 
+[``lexp ^ rexp``](relations/lexp-xor-rexp/) 
+
+### Binary expressions with relational operators
+
+[``lexp == rexp``](relations/lexp-equal-rexp/) 
+[``lexp != rexp``](relations/lexp-notequal-rexp/) 
+[``lexp > rexp``](relations/lexp-gt-rexp/) 
+[``lexp >= rexp``](relations/lexp-gte-rexp/) 
+[``lexp < rexp``](relations/lexp-lt-rexp/) 
+[``lexp <= rexp``](relations/lexp-lte-rexp/) 
+
+### Binary expressions with bitwise operators
+
+[``lexp & rexp``](relations/lexp-bit-and-rexp/) 
+[``lexp | rexp``](relations/lexp-bit-or-rexp/) 
+[``lexp ^ rexp``](relations/lexp-bit-xor-rexp/) 
+
+### Unary Expression
+
+[``exp``](relations/exp/) 
+[``+exp``](relations/plus-exp/) 
+[``-exp``](relations/minus-exp/) 
+[``++exp``](relations/preinc-exp/) 
+[``exp++``](relations/posinc-exp/) 
+[``--exp``](relations/predec-exp/) 
+[``exp--``](relations/posdec-exp/) 
+[``!exp``](relations/not-exp/) 
+[``~exp``](relations/bit-not-exp/) 
+
+### Arithmetic Compound Assigment
+
+[``lhs += rhs``](relations/plus-assigment/) 
+[``lhs -= rh``](relations/minus-assigment/) 
+[``lhs *= rh``](relations/times-assigment/) 
+[``lhs /= rh``](relations/div-assigment/) 
+[``lhs %= rh``](relations/mod-assigment/) 
+
+### Bit Shift Compound Assigment
+
+[``lhs <<= rh``](relations/leftbit-assigment/) 
+[``lhs >>= rh``](relations/rightbit-assigment/) 
+[``lhs >>>= rh``](relations/rightunsignedbit-assigment/) 
+
+### Logical Compound Assigment
+
+[``lhs &= rh``](relations/and-assigment/) 
+[``lhs |= rh``](relations/or-assigment/) 
+[``lhs ^= rh``](relations/xor-assigment/) 
 
 
 ## Subjects
