@@ -4,28 +4,28 @@ title: "lexp % rexp"
 permalink: /relations/lexp-mod-rexp/
 ---
 
-# Target: ``lexp + rexp``
+# Target: ``lexp % rexp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int mod(int lexp, int rexp) {
+    return lexp % rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-mod-rexp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 8                   | 4                  |50.00%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
