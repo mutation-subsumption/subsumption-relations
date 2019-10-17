@@ -10,15 +10,15 @@ permalink: /relations/lexp-minus-rexp/
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int sub(int lexp, int rexp) {
+    return lexp - rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-minus_rexp.png)
 
 ## Sufficient Mutants
 
