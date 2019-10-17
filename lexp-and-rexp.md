@@ -10,22 +10,22 @@ permalink: /relations/lexp-and-rexp/
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public boolean and(boolean lexp, boolean rexp) {
+    return lexp && rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-and-rexp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 11                  | 4                  |63.63%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -37,5 +37,6 @@ public int sum(int lexp, int rexp) {
 | :---     |     ---: |      ---: |     ---: |   ---: |
 | ODL      | 2        | 0         | 0        | **2**  |
 | VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| COR      | 6        | 0         | 0        | **6**  |
+| COR      | 1        | 0         | 0        | **1**  |
+|**Total** | **11**   | **0**     | **0**    | **11** |
