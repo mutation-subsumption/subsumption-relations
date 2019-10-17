@@ -10,22 +10,25 @@ permalink: /relations/exp/
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+private int field1;
+
+public int method1(int exp) {
+    field1 = exp;
+    return exp + field1;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_exp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 6                   | 1                  |83.34%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -35,7 +38,8 @@ public int sum(int lexp, int rexp) {
 
 | Operator | #Mutants | Stillborn | Stubborn | Total  |
 | :---     |     ---: |      ---: |     ---: |   ---: |
-| ODL      | 2        | 0         | 0        | **2**  |
-| VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| LOI      | 1        | 0         | 0        | **1**  |
+| VDL/CDL  | 1        | -1        | 0        | **0**  |
+| AOIU     | 1        | 0         | 0        | **1**  |
+| AOIU     | 4        | 0         | 0        | **4**  |
+|**Total** | **7**    | **-1**    | **0**    | **6**  |
