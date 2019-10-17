@@ -4,7 +4,7 @@ title: "exp"
 permalink: /relations/exp/
 ---
 
-# Target: ``lexp + rexp``
+# Target: ``exp``
 
 ## Snippet
 
