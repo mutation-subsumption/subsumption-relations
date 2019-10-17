@@ -3,11 +3,6 @@ layout: default
 title: "lexp | rexp"
 permalink: /relations/lexp-bit-or-rexp/
 ---
----
-layout: default
-title: "lexp + rexp"
-permalink: /relations/lexp-bit-and-rexp/
----
 # Target: ``lexp | rexp``
 
 ## Snippet
