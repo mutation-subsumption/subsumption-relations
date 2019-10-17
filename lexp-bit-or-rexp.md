@@ -3,29 +3,33 @@ layout: default
 title: "lexp | rexp"
 permalink: /relations/lexp-bit-or-rexp/
 ---
-
-# Target: ``lexp + rexp``
+---
+layout: default
+title: "lexp + rexp"
+permalink: /relations/lexp-bit-and-rexp/
+---
+# Target: ``lexp | rexp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int or(int lexp, int rexp) {
+    return lexp | rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-bor-rexp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 6                   | 3                  |50.00%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -37,5 +41,5 @@ public int sum(int lexp, int rexp) {
 | :---     |     ---: |      ---: |     ---: |   ---: |
 | ODL      | 2        | 0         | 0        | **2**  |
 | VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| LOR      | 2        | 0         | 0        | **2**  |
+|**Total** | **6**    | **0**     | **0**    | **6**  |
