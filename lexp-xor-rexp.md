@@ -4,28 +4,28 @@ title: "lexp ^ rexp"
 permalink: /relations/lexp-xor-rexp/
 ---
 
-# Target: ``lexp + rexp``
+# Target: ``lexp ^ rexp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public boolean xor(boolean lexp, boolean rexp) {
+    return lexp ^ rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-xor-rexp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 10                  | 2                  |80.00%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -37,5 +37,6 @@ public int sum(int lexp, int rexp) {
 | :---     |     ---: |      ---: |     ---: |   ---: |
 | ODL      | 2        | 0         | 0        | **2**  |
 | VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| COR      | 6        | 0         | -1       | **5**  |
+| COI      | 1        | 0         | 0        | **1**  |
+|**Total** | **11**   | **0**     | **-1**   | **10** |
