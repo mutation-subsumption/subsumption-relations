@@ -26,7 +26,7 @@ public int leftShift(int lexp, int rexp) {
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 3                   | 1                  | 50.00%   |
+| 3                   | 1                  | 66.67%   |
 
 ¹Excluding stillborn and stubborn mutants.
 
