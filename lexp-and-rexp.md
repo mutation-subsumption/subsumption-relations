@@ -38,5 +38,5 @@ public boolean and(boolean lexp, boolean rexp) {
 | ODL      | 2        | 0         | 0        | **2**  |
 | VDL/CDL  | 2        | 0         | 0        | **2**  |
 | COR      | 6        | 0         | 0        | **6**  |
-| COR      | 1        | 0         | 0        | **1**  |
+| COI      | 1        | 0         | 0        | **1**  |
 |**Total** | **11**   | **0**     | **0**    | **11** |
