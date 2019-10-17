@@ -3,7 +3,7 @@ layout: default
 title: "lhs /= rh"
 permalink: /relations/div-assigment/
 ---
-## Target: ``lhs /= rhs`
+## Target: ``lhs /= rhs``
 
 ## Snippet
 
