@@ -4,21 +4,21 @@ title: "lexp * rexp"
 permalink: /relations/lexp-times-rexp/
 ---
 
-# Target: ``lexp + rexp``
+# Target: ``lexp * rexp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int mul(int lexp, int rexp) {
+    return lexp * rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-times-rexp.png)
 
 ## Sufficient Mutants
 
