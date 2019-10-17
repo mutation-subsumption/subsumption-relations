@@ -4,28 +4,29 @@ title: "lhs *= rh"
 permalink: /relations/times-assigment/
 ---
 
-# Target: ``lhs *= rh``
+## Target: ``lhs *= rhs`
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int times(int lexp, int rexp) {
+    lexp *= rexp;
+    return lexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_times-assigment.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 6                   | 4                  |33.34%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -35,7 +36,7 @@ public int sum(int lexp, int rexp) {
 
 | Operator | #Mutants | Stillborn | Stubborn | Total  |
 | :---     |     ---: |      ---: |     ---: |   ---: |
-| ODL      | 2        | 0         | 0        | **2**  |
-| VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| ASRS     | 4        | 0         | 0        | **4**  |
+| ODL      | 1        | 0         | 0        | **1**  |
+| SDL      | 1        | 0         | 0        | **1**  |
+|**Total** | **6**    | **0**     | **0**    | **6**  |
