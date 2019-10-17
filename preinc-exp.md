@@ -4,28 +4,28 @@ title: "++exp
 permalink: /relations/preinc-exp/
 ---
 
-# Target: ``lexp + rexp``
+## Target: ``++exp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int incrementPrefix(int exp) {
+    return ++exp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_preinc-exp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 3                   | 1                  |66.67%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -35,7 +35,9 @@ public int sum(int lexp, int rexp) {
 
 | Operator | #Mutants | Stillborn | Stubborn | Total  |
 | :---     |     ---: |      ---: |     ---: |   ---: |
-| ODL      | 2        | 0         | 0        | **2**  |
-| VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| ODL      | 1        | 0         | 0        | **1**  |
+| VDL/CDL  | 1        | -1        | 0        | **0**  |
+| AORS     | 1        | 0         | 0        | **1**  |
+| AODS     | 1        | 0         | 0        | **1**  |
+| LOI      | 1        | -1        | 0        | **0**  |
+|**Total** | **5**    | **-2**    | **0**    | **3**  |
