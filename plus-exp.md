@@ -4,28 +4,28 @@ title: "+exp"
 permalink: /relations/plus-exp/
 ---
 
-# Target: ``lexp + rexp``
+# Target: ``+exp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int plus(int exp) {
+    return +exp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_plus-exp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 1                   | 1                  |00.00%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -35,7 +35,8 @@ public int sum(int lexp, int rexp) {
 
 | Operator | #Mutants | Stillborn | Stubborn | Total  |
 | :---     |     ---: |      ---: |     ---: |   ---: |
-| ODL      | 2        | 0         | 0        | **2**  |
-| VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| LOI      | 1        | 0         | 0        | **1**  |
+| ODL      | 1        | 0         | -1       | **0**  |
+| VDL/CDL  | 1        | -1        | 0        | **0**  |
+| AOUD     | 1        | 0         | -1       | **0**  |
+|**Total** | **4**    | **-1**    | **-2**   | **1**  |
