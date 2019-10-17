@@ -4,7 +4,7 @@ title: "lhs |= rhs"
 permalink: /relations/or-assigment/
 ---
 
-## Target: ``lhs |= rhs`
+## Target: ``lhs |= rhs``
 
 ## Snippet
 
