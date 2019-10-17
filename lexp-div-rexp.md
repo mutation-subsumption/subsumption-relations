@@ -4,21 +4,21 @@ title: "lexp / rexp"
 permalink: /relations/lexp-div-rexp/
 ---
 
-# Target: ``lexp + rexp``
+# Target: ``lexp / rexp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int div(int lexp, int rexp) {
+    return lexp / rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-div-rexp.png)
 
 ## Sufficient Mutants
 
