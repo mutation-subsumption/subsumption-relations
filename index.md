@@ -92,22 +92,22 @@ services:
 ### Arithmetic Compound Assigment
 
 [``lhs += rhs``](relations/plus-assigment/) 
-[``lhs -= rh``](relations/minus-assigment/) 
-[``lhs *= rh``](relations/times-assigment/) 
-[``lhs /= rh``](relations/div-assigment/) 
-[``lhs %= rh``](relations/mod-assigment/) 
+[``lhs -= rhs``](relations/minus-assigment/) 
+[``lhs *= rhs``](relations/times-assigment/) 
+[``lhs /= rhs``](relations/div-assigment/) 
+[``lhs %= rhs``](relations/mod-assigment/) 
 
 ### Bit Shift Compound Assigment
 
-[``lhs <<= rh``](relations/leftbit-assigment/) 
-[``lhs >>= rh``](relations/rightbit-assigment/) 
-[``lhs >>>= rh``](relations/rightunsignedbit-assigment/) 
+[``lhs <<= rhs``](relations/leftbit-assigment/) 
+[``lhs >>= rhs``](relations/rightbit-assigment/) 
+[``lhs >>>= rhs``](relations/rightunsignedbit-assigment/) 
 
 ### Logical Compound Assigment
 
-[``lhs &= rh``](relations/and-assigment/) 
-[``lhs |= rh``](relations/or-assigment/) 
-[``lhs ^= rh``](relations/xor-assigment/) 
+[``lhs &= rhs``](relations/and-assigment/) 
+[``lhs |= rhs``](relations/or-assigment/) 
+[``lhs ^= rhs``](relations/xor-assigment/) 
 
 
 ## Subjects
