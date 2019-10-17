@@ -4,28 +4,29 @@ title: "lhs >>= rhs"
 permalink: /relations/rightbit-assigment/
 ---
 
-# Target: ``lexp + rexp``
+## Target: ``lhs >>= rhs`
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public int rightShift(int lexp, int rexp) {
+    lexp >>= rexp;
+    return lexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_rightbit-assigment.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 3                   | 3                  |00.00%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -35,7 +36,7 @@ public int sum(int lexp, int rexp) {
 
 | Operator | #Mutants | Stillborn | Stubborn | Total  |
 | :---     |     ---: |      ---: |     ---: |   ---: |
-| ODL      | 2        | 0         | 0        | **2**  |
-| VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| ASRS     | 1        | 0         | 0        | **1**  |
+| ODL      | 1        | 0         | 0        | **1**  |
+| SDL      | 1        | 0         | 0        | **1**  |
+|**Total** | **3**    | **0**     | **0**    | **3**  |
