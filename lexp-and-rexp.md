@@ -4,7 +4,7 @@ title: "lexp && rexp"
 permalink: /relations/lexp-and-rexp/
 ---
 
-# Target: ``lexp + rexp``
+# Target: ``lexp && rexp``
 
 ## Snippet
 
