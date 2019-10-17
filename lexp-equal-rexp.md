@@ -18,7 +18,7 @@ public boolean eq(int lexp, int rexp) {
 
 ### DMSG
 
-![image](images/dmsg_lexp-equal-rexp.png)
+![image](images/dmsg_lexp-eq-rexp.png)
 
 ## Sufficient Mutants
 
