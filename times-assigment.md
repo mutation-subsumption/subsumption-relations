@@ -4,7 +4,7 @@ title: "lhs *= rh"
 permalink: /relations/times-assigment/
 ---
 
-## Target: ``lhs *= rhs`
+## Target: ``lhs *= rhs``
 
 ## Snippet
 
