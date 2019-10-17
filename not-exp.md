@@ -4,28 +4,28 @@ title: "!exp"
 permalink: /relations/not-exp/
 ---
 
-# Target: ``lexp + rexp``
+## Target: ``!exp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public boolean complement(boolean exp) {
+    return !exp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_not-exp.png)
 
 ## Sufficient Mutants
 
 
 |Total of Mutants¹    | Sufficient Mutants |Reduction |
 |                ---: |               ---: |     ---: |  
-| 8                   | 3                  |62.50%    |
+| 2                   | 1                  |50.00%    |
 
 ¹Excluding stillborn and stubborn mutants.
 
@@ -35,7 +35,7 @@ public int sum(int lexp, int rexp) {
 
 | Operator | #Mutants | Stillborn | Stubborn | Total  |
 | :---     |     ---: |      ---: |     ---: |   ---: |
-| ODL      | 2        | 0         | 0        | **2**  |
-| VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
-|**Total** | **8**    | **0**     | **0**    | **8**  |
+| ODL      | 1        | 0         | 0        | **1**  |
+| VDL/CDL  | 1        | -1        | 0        | **0**  |
+| COD      | 1        | 0         | 0        | **1**  |
+|**Total** | **3**    | **-1**    | **0**    | **2**  |
