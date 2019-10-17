@@ -4,21 +4,22 @@ title: "lexp != rexp"
 permalink: /relations/lexp-notequal-rexp/
 ---
 
-# Target: ``lexp + rexp``
+
+# Target: ``lexp != rexp``
 
 ## Snippet
 
 
 ```java
-public int sum(int lexp, int rexp) {
-    return lexp + rexp;
+public boolean neq(int lexp, int rexp) {
+    return lexp != rexp;
 }
 ```
 
 
 ### DMSG
 
-![image](images/dmsg_lexp-plus_rexp.png)
+![image](images/dmsg_lexp-neq-rexp.png)
 
 ## Sufficient Mutants
 
@@ -35,7 +36,6 @@ public int sum(int lexp, int rexp) {
 
 | Operator | #Mutants | Stillborn | Stubborn | Total  |
 | :---     |     ---: |      ---: |     ---: |   ---: |
-| ODL      | 2        | 0         | 0        | **2**  |
-| VDL/CDL  | 2        | 0         | 0        | **2**  |
-| AORB     | 4        | 0         | 0        | **4**  |
+| ROR      | 7        | 0         | 0        | **7**  |
+| COI      | 1        | 0         | 0        | **1**  |
 |**Total** | **8**    | **0**     | **0**    | **8**  |
